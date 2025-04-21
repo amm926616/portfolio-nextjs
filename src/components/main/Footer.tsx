@@ -105,8 +105,8 @@ const Footer = () => {
             SYSTEM STATUS: <span className="text-green-400">OPERATIONAL</span>
           </p>
           <p className="text-xs text-red-400/70 italic max-w-2xl mx-auto">
-            "Knowledge is the only resource that grows when shared. This system
-            will continue evolving until heat death of the universe."
+            &quotKnowledge is the only resource that grows when shared. This
+            system will continue evolving until heat death of the universe.&quot
           </p>
         </div>
       </div>

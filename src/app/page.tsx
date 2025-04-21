@@ -2,6 +2,8 @@ import Head from "next/head";
 import HeroComponent from "../components/home/HeroComponent";
 import ValueProposition from "../components/home/ValueProposition";
 import QuickLinks from "../components/home/QuickLinks";
+import TechStack from "../components/home/TechStactComponent";
+import ProudProjects from "../components/home/ProudProjectsComponent";
 
 export default function HomePage() {
   return (
@@ -28,6 +30,8 @@ export default function HomePage() {
           {" "}
           {/* Removed gap and control spacing within components */}
           <HeroComponent />
+          <TechStack />
+          <ProudProjects />
           <ValueProposition />
           <QuickLinks />
         </div>

@@ -38,7 +38,7 @@ const HireMePage = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Let's <span className="text-red-400">Work Together</span>
+            Let&apos;s <span className="text-red-400">Work Together</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Available for freelance projects and full-time opportunities
@@ -157,7 +157,7 @@ const HireMePage = () => {
                       href="mailto:your.email@example.com"
                       className="text-white hover:text-red-300 transition"
                     >
-                      your.email@example.com
+                      amm926616@gmail.com
                     </a>
                   </div>
                 </div>
@@ -171,7 +171,7 @@ const HireMePage = () => {
                       href="tel:+1234567890"
                       className="text-white hover:text-red-300 transition"
                     >
-                      +95 XXX XXX XXX
+                      +959457027122
                     </a>
                   </div>
                 </div>
@@ -182,11 +182,11 @@ const HireMePage = () => {
                   <div>
                     <p className="text-gray-400 text-sm">Telegram</p>
                     <a
-                      href="https://t.me/yourusername"
+                      href="https://t.me/adamd178"
                       target="_blank"
                       className="text-white hover:text-red-300 transition"
                     >
-                      @yourusername
+                      @adamd178
                     </a>
                   </div>
                 </div>
@@ -197,11 +197,11 @@ const HireMePage = () => {
                   <div>
                     <p className="text-gray-400 text-sm">Messenger</p>
                     <a
-                      href="https://m.me/yourusername"
+                      href="https://m.me/adamd178"
                       target="_blank"
                       className="text-white hover:text-red-300 transition"
                     >
-                      @yourusername
+                      @adamd178
                     </a>
                   </div>
                 </div>

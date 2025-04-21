@@ -28,7 +28,7 @@ export default function HeroComponent() {
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               <span className="text-red-400 font-mono">{"{"}</span>
-              Aiden
+              Aiden The One
               <span className="text-red-400 font-mono">{"}"}</span>
             </h1>
             <p className="text-xl text-gray-300 mb-6">

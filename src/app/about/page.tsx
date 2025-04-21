@@ -119,7 +119,8 @@ const AboutPage = () => {
             &lt;My Odyssey/&gt;
           </h1>
           <p className="text-center text-gray-300 italic hover:text-gray-200 transition-colors duration-300">
-            "Where logic meets creativity in the pursuit of understanding"
+            &quot;Where logic meets creativity in the pursuit of
+            understanding&quot;
           </p>
         </div>
 
@@ -134,7 +135,7 @@ const AboutPage = () => {
               <p className="text-gray-300 leading-relaxed">
                 My journey began in{" "}
                 <span className="text-red-300 font-medium">
-                  Yangon's jewelry workshops
+                  Yangon`&apos;`s jewelry workshops
                 </span>
                 , where I watched my father transform raw gold into intricate
                 designs. This early exposure to
@@ -319,7 +320,7 @@ const AboutPage = () => {
             </h2>
             <div className="bg-gray-700/20 p-5 rounded-lg border border-gray-600/30 hover:border-red-500/30 transition-colors duration-300">
               <p className="text-gray-300 italic mb-3">
-                "When I'm not coding, you'll find me:"
+                &quot;When I&apos;m not coding, you&apos;ll find me:&quot;
               </p>
               <ul className="grid grid-cols-2 gap-3 text-sm">
                 {hobbies.map((hobby, idx) => (

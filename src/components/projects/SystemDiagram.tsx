@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 
 type SystemDiagramProps = {
-  architecture: string;
+  architecture: string | undefined;
 };
 
 const SystemDiagram = ({ architecture }: SystemDiagramProps) => {
   const layers = architecture
-    .split("\n")
-    .map((line) => line.trim())
-    .filter((line) => line.length > 0);
+    ?.split("\n")
+    ?.map((line) => line.trim())
+    ?.filter((line) => line.length > 0);
 
   return (
     <div className="mt-6">
@@ -16,7 +16,7 @@ const SystemDiagram = ({ architecture }: SystemDiagramProps) => {
         ARCHITECTURE OVERVIEW
       </h4>
       <div className="space-y-2">
-        {layers.map((layer, i) => (
+        {layers?.map((layer, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, x: -20 }}
