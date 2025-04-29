@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { FiDownload } from "react-icons/fi";
+
 const AboutPage = () => {
   // Data moved to constants for better organization
   const skills = [
@@ -109,33 +114,87 @@ const AboutPage = () => {
     { name: "Reading physics philosophy", icon: "📚" },
   ];
 
+  // Animation variants
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 0.8 } },
+  };
+
+  const slideInLeft = {
+    hidden: { opacity: 0, x: -50 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  };
+
+  const slideInRight = {
+    hidden: { opacity: 0, x: 50 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-16 font-sans">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Animated Header */}
-        <div className="border-b-2 border-red-500 pb-2 mb-12 relative group">
-          <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-red-500 to-transparent w-1/3 group-hover:w-full transition-all duration-1000 ease-out"></div>
-          <h1 className="text-5xl font-bold text-red-400 mb-2 text-center font-mono hover:text-red-300 transition-colors duration-300">
-            &lt;My Odyssey/&gt;
-          </h1>
-          <p className="text-center text-gray-300 italic hover:text-gray-200 transition-colors duration-300">
-            &quot;Where logic meets creativity in the pursuit of
-            understanding&quot;
-          </p>
-        </div>
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={container}
+          className="mb-12 text-center"
+        >
+          <motion.div variants={item} className="inline-block">
+            <div className="border-b-2 border-red-500 pb-2 relative group">
+              <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-red-500 to-transparent w-1/3 group-hover:w-full transition-all duration-1000 ease-out"></div>
+              <h1 className="text-5xl font-bold text-red-400 mb-2 font-mono hover:text-red-300 transition-colors duration-300">
+                &lt;My Odyssey/&gt;
+              </h1>
+              <motion.p
+                variants={fadeIn}
+                className="text-gray-300 italic hover:text-gray-200 transition-colors duration-300"
+              >
+                &quot;Where logic meets creativity in the pursuit of
+                understanding&quot;
+              </motion.p>
+            </div>
+          </motion.div>
+        </motion.div>
 
         {/* Main Content Container */}
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-2xl shadow-red-900/30 border border-gray-700 space-y-16">
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={fadeIn}
+          className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 shadow-2xl shadow-red-900/30 border border-gray-700 space-y-16"
+        >
           {/* Introduction Narrative */}
-          <section className="space-y-6">
-            <div className="flex items-start group">
+          <motion.section
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            className="space-y-6"
+          >
+            <motion.div variants={item} className="flex items-start group">
               <span className="text-red-400 text-2xl mr-3 transition-transform duration-500 group-hover:rotate-12">
                 ⎈
               </span>
               <p className="text-gray-300 leading-relaxed">
                 My journey began in{" "}
                 <span className="text-red-300 font-medium">
-                  Yangon`&apos;`s jewelry workshops
+                  Yangon&apos;s jewelry workshops
                 </span>
                 , where I watched my father transform raw gold into intricate
                 designs. This early exposure to
@@ -156,9 +215,9 @@ const AboutPage = () => {
                 </span>{" "}
                 discipline.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="flex items-start group">
+            <motion.div variants={item} className="flex items-start group">
               <span className="text-red-400 text-2xl mr-3 transition-transform duration-700 group-hover:rotate-180">
                 ⟳
               </span>
@@ -182,19 +241,32 @@ const AboutPage = () => {
                 , where I could build and rebuild systems to understand their
                 essence.
               </p>
-            </div>
-          </section>
+            </motion.div>
+          </motion.section>
 
           {/* Skills Showcase */}
-          <section>
-            <h2 className="text-2xl font-bold text-red-400 mb-6 flex items-center">
+          <motion.section
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={container}
+          >
+            <motion.h2
+              variants={item}
+              className="text-2xl font-bold text-red-400 mb-6 flex items-center"
+            >
               <span className="w-4 h-4 bg-red-500 rounded-full mr-2 animate-pulse duration-2000"></span>
               My Toolkit
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-              {skills.map((skill) => (
-                <div
+            </motion.h2>
+            <motion.div
+              variants={container}
+              className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6"
+            >
+              {skills.map((skill, index) => (
+                <motion.div
                   key={skill.name}
+                  variants={item}
+                  custom={index}
                   className="group transform hover:-translate-y-1 transition-transform duration-300"
                 >
                   <div className="flex justify-between items-center text-xs mb-1">
@@ -211,20 +283,35 @@ const AboutPage = () => {
                       style={{ width: skill.level }}
                     ></div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </section>
+            </motion.div>
+          </motion.section>
 
           {/* Journey Timeline */}
-          <section>
-            <h2 className="text-2xl font-bold text-red-400 mb-6 flex items-center">
+          <motion.section
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={container}
+          >
+            <motion.h2
+              variants={item}
+              className="text-2xl font-bold text-red-400 mb-6 flex items-center"
+            >
               <span className="w-4 h-4 bg-red-500 rounded-full mr-2 animate-pulse duration-2000"></span>
               My Evolution
-            </h2>
-            <div className="relative pl-8 border-l-2 border-red-500/30 space-y-8">
+            </motion.h2>
+            <motion.div
+              variants={container}
+              className="relative pl-8 border-l-2 border-red-500/30 space-y-8"
+            >
               {journey.map((item, idx) => (
-                <div key={idx} className="relative group">
+                <motion.div
+                  key={idx}
+                  variants={slideInLeft}
+                  className="relative group"
+                >
                   <div
                     className={`absolute -left-4 top-1 w-4 h-4 ${item.color} rounded-full border-2 border-gray-800 transform group-hover:scale-125 transition-transform duration-300`}
                   />
@@ -237,21 +324,33 @@ const AboutPage = () => {
                     </h3>
                     <p className="text-gray-300 text-sm">{item.description}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </section>
+            </motion.div>
+          </motion.section>
 
           {/* Project Showcase */}
-          <section>
-            <h2 className="text-2xl font-bold text-red-400 mb-6 flex items-center">
+          <motion.section
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={container}
+          >
+            <motion.h2
+              variants={item}
+              className="text-2xl font-bold text-red-400 mb-6 flex items-center"
+            >
               <span className="w-4 h-4 bg-red-500 rounded-full mr-2 animate-pulse duration-2000"></span>
               Projects That Define Me
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            </motion.h2>
+            <motion.div
+              variants={container}
+              className="grid md:grid-cols-2 gap-6"
+            >
               {projects.map((project, idx) => (
-                <div
+                <motion.div
                   key={idx}
+                  variants={idx % 2 === 0 ? slideInLeft : slideInRight}
                   className="bg-gray-700/30 hover:bg-red-900/20 transition-all duration-300 p-5 rounded-lg border border-gray-600/50 group transform hover:-translate-y-1"
                 >
                   <div className="flex items-start mb-2">
@@ -283,20 +382,31 @@ const AboutPage = () => {
                       Explore project <span className="ml-1">→</span>
                     </a>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </section>
+            </motion.div>
+          </motion.section>
 
           {/* Philosophy */}
-          <section>
-            <h2 className="text-2xl font-bold text-red-400 mb-6 flex items-center">
+          <motion.section
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={container}
+          >
+            <motion.h2
+              variants={item}
+              className="text-2xl font-bold text-red-400 mb-6 flex items-center"
+            >
               <span className="w-4 h-4 bg-red-500 rounded-full mr-2 animate-pulse duration-2000"></span>
               My Coding Philosophy
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            </motion.h2>
+            <motion.div
+              variants={container}
+              className="grid md:grid-cols-2 gap-6"
+            >
               {philosophy.map((item, idx) => (
-                <div
+                <motion.div
                   key={idx}
                   className="p-4 border border-gray-600/30 rounded-lg hover:border-red-500/50 transition-colors duration-300 group transform hover:-translate-y-1 bg-gradient-to-br from-gray-800/30 to-gray-900/30"
                 >
@@ -307,35 +417,68 @@ const AboutPage = () => {
                     {item.principle}
                   </h3>
                   <p className="text-gray-300 text-sm">{item.explanation}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </section>
+            </motion.div>
+          </motion.section>
 
           {/* Personal Touch */}
-          <section>
-            <h2 className="text-2xl font-bold text-red-400 mb-4 flex items-center">
+          <motion.section
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={container}
+          >
+            <motion.h2
+              variants={item}
+              className="text-2xl font-bold text-red-400 mb-4 flex items-center"
+            >
               <span className="w-4 h-4 bg-red-500 rounded-full mr-2 animate-pulse duration-2000"></span>
               Beyond Code
-            </h2>
-            <div className="bg-gray-700/20 p-5 rounded-lg border border-gray-600/30 hover:border-red-500/30 transition-colors duration-300">
+            </motion.h2>
+            <motion.div
+              variants={fadeIn}
+              className="bg-gray-700/20 p-5 rounded-lg border border-gray-600/30 hover:border-red-500/30 transition-colors duration-300"
+            >
               <p className="text-gray-300 italic mb-3">
                 &quot;When I&apos;m not coding, you&apos;ll find me:&quot;
               </p>
-              <ul className="grid grid-cols-2 gap-3 text-sm">
+              <motion.ul
+                variants={container}
+                className="grid grid-cols-2 gap-3 text-sm"
+              >
                 {hobbies.map((hobby, idx) => (
-                  <li
+                  <motion.li
                     key={idx}
+                    variants={item}
                     className="flex items-center text-gray-300 hover:text-red-300 transition-colors duration-300"
                   >
                     <span className="text-red-400 mr-2">{hobby.icon}</span>
                     <span>{hobby.name}</span>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
-            </div>
-          </section>
-        </div>
+              </motion.ul>
+            </motion.div>
+          </motion.section>
+
+          {/* Download CV Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mt-8"
+          >
+            <a
+              href="/path-to-your-cv.pdf"
+              download
+              className="inline-flex items-center px-6 py-3 border border-red-500 text-red-400 hover:bg-red-500/10 rounded-lg transition group"
+            >
+              <FiDownload className="mr-2 group-hover:animate-bounce" />
+              Download Full Resume
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
