@@ -24,7 +24,7 @@ export default async function ProjectDetailPage({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-16">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-8xl">
         <div className="mb-8">
           <Link
             href="/projects"
@@ -35,11 +35,11 @@ export default async function ProjectDetailPage({
         </div>
 
         <div className="bg-gray-800 border border-gray-700 rounded-xl overflow-hidden">
-          <div className="p-8">
-            {/* Project Header (unchanged) */}
-            <div className="flex justify-between items-start mb-6">
+          <div className="p-6 md:p-8">
+            {/* Project Header */}
+            <div className="flex flex-col md:flex-row justify-between items-start mb-8 gap-4">
               <div>
-                <h2 className="text-3xl font-bold text-red-400 mb-1">
+                <h2 className="text-2xl md:text-3xl font-bold text-red-400 mb-1">
                   {project.title}
                 </h2>
                 <p className="text-red-300 font-mono">{project.tagline}</p>
@@ -71,13 +71,14 @@ export default async function ProjectDetailPage({
             </div>
 
             {/* Main Project Image */}
-            <div className="relative h-96 w-full rounded-lg overflow-hidden mb-6">
+            <div className="relative aspect-video w-full rounded-lg overflow-hidden mb-8">
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>
 
@@ -96,20 +97,23 @@ export default async function ProjectDetailPage({
                 <h3 className="text-2xl font-bold text-red-400 mb-6 flex items-center">
                   <FiImage className="mr-2" /> Screenshots
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6">
                   {project.screenshots.map((screenshot, index) => (
                     <div key={index} className="group">
-                      <div className="relative h-64 w-full rounded-lg overflow-hidden mb-2">
+                      <div className="relative aspect-video w-full rounded-lg overflow-hidden mb-2 bg-gray-900">
                         <Image
                           src={screenshot.url}
                           alt={`${project.title} screenshot ${index + 1}`}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="object-contain group-hover:opacity-90 transition-opacity duration-300"
+                          sizes="(max-width: 768px) 100vw, 800px"
                         />
                       </div>
-                      <p className="text-gray-400 text-sm italic">
-                        {screenshot.caption}
-                      </p>
+                      {screenshot.caption && (
+                        <p className="text-gray-400 text-sm italic text-center">
+                          {screenshot.caption}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -122,10 +126,10 @@ export default async function ProjectDetailPage({
                 <h3 className="text-2xl font-bold text-red-400 mb-6 flex items-center">
                   <FiVideo className="mr-2" /> Video Demonstration
                 </h3>
-                <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                <div className="aspect-video w-full rounded-lg overflow-hidden">
                   <iframe
                     src={project.videoDemo}
-                    className="w-full h-96 rounded-lg"
+                    className="w-full h-full rounded-lg"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
@@ -133,8 +137,8 @@ export default async function ProjectDetailPage({
               </div>
             )}
 
-            {/* Rest of your existing sections */}
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
+            {/* System Architecture & Technology Stack */}
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
               {/* System Architecture */}
               <div className="bg-gray-700/50 p-6 rounded-lg border border-gray-600">
                 <h3 className="text-xl font-bold text-red-400 mb-4 flex items-center">
@@ -166,7 +170,7 @@ export default async function ProjectDetailPage({
             </div>
 
             {/* Challenges & Solutions */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="bg-gray-700/50 p-6 rounded-lg border border-gray-600">
                 <h3 className="text-xl font-bold text-red-400 mb-4">
                   Challenges
