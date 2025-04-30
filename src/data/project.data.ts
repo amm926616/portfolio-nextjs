@@ -97,7 +97,7 @@ export const projects: Project[] = [
     tagline: "JavaFX implementation of typesetting tool",
     description: "Java port of the EasyPaste tool with improved UI",
     detailedDescription: `
-      My first Java desktop application, created during university.
+      My first Java desktop application, created to learn Java and JavaFX when I was having java course at my university.
       Features:
       - JavaFX modern interface
       - Same core functionality as Python version

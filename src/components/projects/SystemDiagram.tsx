@@ -5,6 +5,7 @@ type SystemDiagramProps = {
 };
 
 const SystemDiagram = ({ architecture }: SystemDiagramProps) => {
+  if (!architecture) return null;
   const layers = architecture
     ?.split("\n")
     ?.map((line) => line.trim())

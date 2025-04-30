@@ -145,7 +145,8 @@ export default async function ProjectDetailPage({
                   <FiCpu className="mr-2" /> System Architecture
                 </h3>
                 <div className="font-mono text-sm text-gray-300 whitespace-pre-line">
-                  {project.systemArchitecture}
+                  {project.systemArchitecture ||
+                    "This project is straightforward and doesn't involve complex architecture."}
                 </div>
               </div>
 
