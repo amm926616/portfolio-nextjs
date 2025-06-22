@@ -306,7 +306,7 @@ export const projects: Project[] = [
       - Vocabulary tracking
       - Custom waveform visualization
     `,
-    image: "/images/projects/april-music.png",
+    image: "/images/projects/april-music-player.png",
     screenshots: [
       {
         url: "/images/projects/april/player-view.png",

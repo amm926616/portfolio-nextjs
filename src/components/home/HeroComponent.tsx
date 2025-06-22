@@ -107,7 +107,7 @@ export default function HeroComponent() {
               {/* Your image with tech-inspired frame */}
               <div className="relative rounded-full overflow-hidden border-4 border-gray-700 hover:border-red-400 transition-all duration-500 h-full w-full">
                 <Image
-                  src="/images/profile.jpg"
+                  src="/images/aiden.png"
                   alt="Aiden - Developer"
                   fill
                   className="object-cover"

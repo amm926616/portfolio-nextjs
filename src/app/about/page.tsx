@@ -1,5 +1,6 @@
 "use client";
 
+import { CV_FORM_DOWNLOAD_LINK } from "@/src/data/links.data";
 import { motion } from "framer-motion";
 import { FiDownload } from "react-icons/fi";
 
@@ -470,7 +471,7 @@ const AboutPage = () => {
             className="text-center mt-8"
           >
             <a
-              href="/path-to-your-cv.pdf"
+              href={CV_FORM_DOWNLOAD_LINK}
               download
               className="inline-flex items-center px-6 py-3 border border-red-500 text-red-400 hover:bg-red-500/10 rounded-lg transition group"
             >

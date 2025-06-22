@@ -40,13 +40,13 @@ const ProjectsPage = () => {
           <div className="flex space-x-2 bg-gray-800 rounded-lg p-1">
             <button
               onClick={() => setViewMode("list")}
-              className={`px-3 py-1 rounded-md text-sm ${viewMode === "list" ? "bg-red-500 text-white" : "text-gray-300"}`}
+              className={`px-3 py-1 rounded-md text-sm cursor-pointer ${viewMode === "list" ? "bg-red-500 text-white" : "text-gray-300"}`}
             >
               <FiCode className="inline mr-1" /> List
             </button>
             <button
               onClick={() => setViewMode("cards")}
-              className={`px-3 py-1 rounded-md text-sm ${viewMode === "cards" ? "bg-red-500 text-white" : "text-gray-300"}`}
+              className={`px-3 py-1 rounded-md text-sm cursor-pointer ${viewMode === "cards" ? "bg-red-500 text-white" : "text-gray-300"}`}
             >
               <FiLayers className="inline mr-1" /> Cards
             </button>
