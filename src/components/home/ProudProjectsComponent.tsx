@@ -12,7 +12,7 @@ const projects = [
       "A feature-rich desktop music player built with PySide6. It supports song downloading, synced and interactive lyrics, dictionary building from song lyrics, note-taking, and full customization of fonts and background images. The app uses SQLite for storage and offers a smooth and elegant experience for music lovers. Developed solo over the course of one year with deep attention to detail and user experience.",
     image: "/proud-projects/april-music-player.png",
     tech: ["Python", "PySide6", "SQLite"],
-    liveLink: "https://example.com", // replace if needed
+    liveLink: "https://april-landing-page.vercel.app/", // replace if needed
     githubLink: "https://github.com/amm926616/april-music-player",
   },
   {
@@ -21,7 +21,7 @@ const projects = [
       "A stylish e-commerce web app featuring smooth bubble animations and an interactive cart bubble. Built with a secure Spring Boot REST API and a modern React + Vite frontend using Tailwind CSS. The backend includes full authentication, role-based access control, and real-time validations. Designed and developed in just 2 weeks for a class competition, winning praise for both performance and design.",
     image: "/proud-projects/hygiene-nerds.png",
     tech: ["React", "Vite", "Tailwind", "Java", "Spring Boot", "MySQL"],
-    liveLink: "https://example.com", // replace if needed
+    liveLink: "https://hygiene-nerds.vercel.app/", // replace if needed
     githubLink: "https://github.com/amm926616/ecommerce",
   },
 ];
