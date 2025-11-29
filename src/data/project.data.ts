@@ -271,7 +271,7 @@ export const projects: Project[] = [
       - Custom vocabulary building
       - Advanced search by components
     `,
-    image: "/images/projects/personal-dictionary.png",
+    image: "/images/projects/preview_project.png",
     technologies: [
       { name: "Python", purpose: "Core application" },
       { name: "PyQt", purpose: "GUI framework" },
