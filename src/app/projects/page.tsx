@@ -66,7 +66,9 @@ const ProjectsPage = () => {
               >
                 <div className="h-48 bg-gray-700 relative overflow-hidden">
                   <Image
-                    src={project.image}
+                    src={
+                      project.image || "/images/projects/preview_project.png"
+                    }
                     alt={project.title}
                     className="w-full h-full object-cover"
                     width={500}
@@ -137,7 +139,9 @@ const ProjectsPage = () => {
                 <div className="md:flex">
                   <div className="md:w-1/3 h-64 bg-gray-700 relative">
                     <Image
-                      src={project.image}
+                      src={
+                        project.image || "/images/projects/preview_project.png"
+                      }
                       alt={project.title}
                       className="w-full h-full object-cover"
                       width={300}

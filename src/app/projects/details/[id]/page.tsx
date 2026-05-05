@@ -73,7 +73,7 @@ export default async function ProjectDetailPage({
             {/* Main Project Image */}
             <div className="relative aspect-video w-full rounded-lg overflow-hidden mb-8">
               <Image
-                src={project.image}
+                src={project.image || "/images/projects/preview_project.png"}
                 alt={project.title}
                 fill
                 className="object-cover"

@@ -4,7 +4,7 @@ export type Project = {
   tagline: string;
   description: string;
   detailedDescription: string;
-  image: string;
+  image?: string;
   screenshots?: {
     url: string;
     caption: string;
@@ -23,276 +23,6 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  {
-    id: "all-in-one-scanlation",
-    title: "All in One Scanlation Tools",
-    tagline: "Automating manga scanlation workflow",
-    description: "Python toolkit for automating manga scanlation processes",
-    detailedDescription: `
-      My very first programming project created to streamline my scanlation freelancing work.
-      Features:
-      - Image manipulation (cutting, cropping, splitting)
-      - Webtoon image downloader from multiple sites
-      - EasyPaste tool for manhwa typesetting automation
-      - Automatically copies next line when user presses Ctrl+V
-    `,
-    image: "/images/projects/scanlation-tools.png",
-    technologies: [
-      { name: "Python", purpose: "Core application" },
-      { name: "Tkinter", purpose: "GUI framework" },
-      { name: "JSON", purpose: "Configuration storage" },
-    ],
-    challenges: [
-      "Handling different image formats and qualities",
-      "Creating a smooth workflow for non-technical users",
-      "Web scraping various webtoon sites",
-    ],
-    solutions: [
-      "Implemented flexible image processing algorithms",
-      "Created intuitive keyboard shortcuts",
-      "Developed site-specific download adapters",
-    ],
-    githubUrl: "https://github.com/amm926616/scanlation-tools",
-    lessonsLearned: [
-      "Importance of user experience in tools",
-      "Basic principles of image processing",
-      "How to structure a complex desktop application",
-    ],
-  },
-  {
-    id: "easypaste-python",
-    title: "EasyPaste (Python Standalone)",
-    tagline: "Streamlined version of the typesetting tool",
-    description: "Standalone version of the EasyPaste typesetting assistant",
-    detailedDescription: `
-      A focused version of the EasyPaste tool from my scanlation toolkit.
-      Improvements:
-      - Cleaner interface
-      - More reliable text line tracking
-      - Reduced memory usage
-    `,
-    image: "/images/projects/easypaste-python.png",
-    technologies: [
-      { name: "Python", purpose: "Core application" },
-      { name: "Tkinter", purpose: "GUI framework" },
-      { name: "JSON", purpose: "Configuration storage" },
-    ],
-    challenges: [
-      "Maintaining functionality while simplifying the UI",
-      "Improving performance over the bundled version",
-    ],
-    solutions: [
-      "Removed unused features from the original",
-      "Optimized text processing algorithms",
-    ],
-    githubUrl: "https://github.com/amm926616/easypaste-python",
-    lessonsLearned: [
-      "Value of focused applications",
-      "Performance optimization techniques",
-    ],
-  },
-  {
-    id: "easypaste-java",
-    title: "EasyPaste (Java Version)",
-    tagline: "JavaFX implementation of typesetting tool",
-    description: "Java port of the EasyPaste tool with improved UI",
-    detailedDescription: `
-      My first Java desktop application, created to learn Java and JavaFX when I was having java course at my university.
-      Features:
-      - JavaFX modern interface
-      - Same core functionality as Python version
-      - Three times larger file size than Python version
-    `,
-    image: "/images/projects/easypaste-java.png",
-    technologies: [
-      { name: "Java", purpose: "Core application" },
-      { name: "JavaFX", purpose: "GUI framework" },
-      { name: "Jackson", purpose: "JSON processing" },
-    ],
-    challenges: [
-      "Java's larger memory footprint",
-      "Learning JavaFX while developing",
-    ],
-    solutions: [
-      "Implemented efficient memory management",
-      "Studied JavaFX documentation thoroughly",
-    ],
-    githubUrl: "https://github.com/amm926616/easypaste-java",
-    lessonsLearned: [
-      "Comparing programming language performance",
-      "JavaFX UI design principles",
-      "When not to rewrite working software",
-    ],
-  },
-  {
-    id: "tasktails",
-    title: "TaskTails",
-    tagline: "Pomodoro-based task management system",
-    description: "Collaborative study timer and task manager",
-    detailedDescription: `
-      Developed with a friend during university.
-      Features:
-      - Pomodoro timer (25/5 minute cycles)
-      - Task management system
-      - Alarm notifications
-      - Basic UI with Tkinter
-    `,
-    image: "/images/projects/tasktails.png",
-    technologies: [
-      { name: "Python", purpose: "Core application" },
-      { name: "Tkinter", purpose: "GUI framework" },
-      { name: "SQLite", purpose: "Data persistence" },
-      { name: "JSON", purpose: "Configuration" },
-    ],
-    challenges: [
-      "Coordinating with a teammate",
-      "Creating reliable timer functionality",
-      "Making Tkinter look decent",
-    ],
-    solutions: [
-      "Used Git for collaboration",
-      "Implemented system-level timing",
-      "Customized Tkinter widgets",
-    ],
-    githubUrl: "https://github.com/amm926616/tasktails",
-    lessonsLearned: [
-      "Collaborative development basics",
-      "Time management in applications",
-      "Limitations of Tkinter",
-    ],
-  },
-  {
-    id: "automation-scripts",
-    title: "Automation Scripts",
-    tagline: "Various productivity scripts",
-    description: "Collection of Python and Bash automation scripts",
-    detailedDescription: `
-      Various scripts created to improve daily productivity:
-      - KPay amount tracking
-      - File/folder renaming utilities
-      - Image resolution fixing
-      - Other workflow automation
-    `,
-    image: "/images/projects/automation-scripts.png",
-    technologies: [
-      { name: "Python", purpose: "Complex automations" },
-      { name: "Bash", purpose: "System-level scripts" },
-    ],
-    challenges: [
-      "Handling edge cases in file operations",
-      "Making scripts user-friendly",
-    ],
-    solutions: [
-      "Added comprehensive error handling",
-      "Created simple configuration systems",
-    ],
-    githubUrl: "https://github.com/amm926616/automation-scripts",
-    lessonsLearned: [
-      "Power of automation",
-      "Importance of documentation",
-      "Shell scripting techniques",
-    ],
-  },
-  {
-    id: "chess-web",
-    title: "Chess in JavaScript",
-    tagline: "Pure web implementation of chess",
-    description: "Browser-based chess game with no libraries",
-    detailedDescription: `
-      My first web development project, completed in one week.
-      Features:
-      - Complete chess rules implementation
-      - Basic AI opponent
-      - Responsive design
-    `,
-    image: "/images/projects/chess-web.png",
-    technologies: [
-      { name: "HTML", purpose: "Structure" },
-      { name: "CSS", purpose: "Styling" },
-      { name: "JavaScript", purpose: "Game logic" },
-    ],
-    challenges: [
-      "Learning web development from scratch",
-      "Implementing complex chess rules",
-    ],
-    solutions: [
-      "Studied chess algorithms",
-      "Built incrementally from simple to complex",
-    ],
-    githubUrl: "https://github.com/amm926616/chess-web",
-    lessonsLearned: [
-      "Web development fundamentals",
-      "Game state management",
-      "Algorithm implementation",
-    ],
-  },
-  {
-    id: "no-skip-player",
-    title: "No Skip Video Player",
-    tagline: "Forces you to watch videos properly",
-    description: "Video player that prevents skipping content",
-    detailedDescription: `
-      Created to combat my own impatience when watching films.
-      Features:
-      - No skip controls
-      - Saves progress automatically
-      - Minimal distraction interface
-    `,
-    image: "/images/projects/no-skip-player.png",
-    technologies: [
-      { name: "Python", purpose: "Core application" },
-      { name: "PyQt", purpose: "GUI framework" },
-      { name: "JSON", purpose: "Progress storage" },
-    ],
-    challenges: [
-      "Removing standard player controls",
-      "Reliable progress tracking",
-    ],
-    solutions: [
-      "Customized video player widget",
-      "Frequent autosave functionality",
-    ],
-    githubUrl: "https://github.com/amm926616/no-skip-player",
-    lessonsLearned: [
-      "Video processing basics",
-      "Building constrained UIs",
-      "Behavioral design patterns",
-    ],
-  },
-  {
-    id: "personal-dictionary",
-    title: "Personal Dictionary",
-    tagline: "Korean vocabulary learning system",
-    description: "Custom dictionary for language learning",
-    detailedDescription: `
-      Created to help with Korean vocabulary memorization.
-      Features:
-      - Syllable-based word connections
-      - Custom vocabulary building
-      - Advanced search by components
-    `,
-    image: "/images/projects/preview_project.png",
-    technologies: [
-      { name: "Python", purpose: "Core application" },
-      { name: "PyQt", purpose: "GUI framework" },
-      { name: "SQLite", purpose: "Data storage" },
-      { name: "JSON", purpose: "Configuration" },
-    ],
-    challenges: [
-      "Handling Korean text processing",
-      "Creating meaningful word connections",
-    ],
-    solutions: [
-      "Implemented syllable decomposition",
-      "Developed relational word mapping",
-    ],
-    githubUrl: "https://github.com/amm926616/personal-dictionary",
-    lessonsLearned: [
-      "Text processing in non-Latin scripts",
-      "Creating educational tools",
-      "Database design for language learning",
-    ],
-  },
   {
     id: "april-music",
     title: "April Music Player",
@@ -359,7 +89,7 @@ export const projects: Project[] = [
       - Comment and reaction system
       - Cloud sync
     `,
-    image: "/images/projects/tasks-of-kaiden.png",
+    image: "",
     technologies: [
       { name: "Flutter", purpose: "Cross-platform app" },
       { name: "Dart", purpose: "Application logic" },
@@ -378,6 +108,276 @@ export const projects: Project[] = [
       "Mobile app development",
       "Real-time data sync",
       "Relationship-centered design",
+    ],
+  },
+  {
+    id: "all-in-one-scanlation",
+    title: "All in One Scanlation Tools",
+    tagline: "Automating manga scanlation workflow",
+    description: "Python toolkit for automating manga scanlation processes",
+    detailedDescription: `
+      My very first programming project created to streamline my scanlation freelancing work.
+      Features:
+      - Image manipulation (cutting, cropping, splitting)
+      - Webtoon image downloader from multiple sites
+      - EasyPaste tool for manhwa typesetting automation
+      - Automatically copies next line when user presses Ctrl+V
+    `,
+    image: "",
+    technologies: [
+      { name: "Python", purpose: "Core application" },
+      { name: "Tkinter", purpose: "GUI framework" },
+      { name: "JSON", purpose: "Configuration storage" },
+    ],
+    challenges: [
+      "Handling different image formats and qualities",
+      "Creating a smooth workflow for non-technical users",
+      "Web scraping various webtoon sites",
+    ],
+    solutions: [
+      "Implemented flexible image processing algorithms",
+      "Created intuitive keyboard shortcuts",
+      "Developed site-specific download adapters",
+    ],
+    githubUrl: "https://github.com/amm926616/scanlation-tools",
+    lessonsLearned: [
+      "Importance of user experience in tools",
+      "Basic principles of image processing",
+      "How to structure a complex desktop application",
+    ],
+  },
+  {
+    id: "easypaste-python",
+    title: "EasyPaste (Python Standalone)",
+    tagline: "Streamlined version of the typesetting tool",
+    description: "Standalone version of the EasyPaste typesetting assistant",
+    detailedDescription: `
+      A focused version of the EasyPaste tool from my scanlation toolkit.
+      Improvements:
+      - Cleaner interface
+      - More reliable text line tracking
+      - Reduced memory usage
+    `,
+    image: "",
+    technologies: [
+      { name: "Python", purpose: "Core application" },
+      { name: "Tkinter", purpose: "GUI framework" },
+      { name: "JSON", purpose: "Configuration storage" },
+    ],
+    challenges: [
+      "Maintaining functionality while simplifying the UI",
+      "Improving performance over the bundled version",
+    ],
+    solutions: [
+      "Removed unused features from the original",
+      "Optimized text processing algorithms",
+    ],
+    githubUrl: "https://github.com/amm926616/easypaste-python",
+    lessonsLearned: [
+      "Value of focused applications",
+      "Performance optimization techniques",
+    ],
+  },
+  {
+    id: "easypaste-java",
+    title: "EasyPaste (Java Version)",
+    tagline: "JavaFX implementation of typesetting tool",
+    description: "Java port of the EasyPaste tool with improved UI",
+    detailedDescription: `
+      My first Java desktop application, created to learn Java and JavaFX when I was having java course at my university.
+      Features:
+      - JavaFX modern interface
+      - Same core functionality as Python version
+      - Three times larger file size than Python version
+    `,
+    image: "",
+    technologies: [
+      { name: "Java", purpose: "Core application" },
+      { name: "JavaFX", purpose: "GUI framework" },
+      { name: "Jackson", purpose: "JSON processing" },
+    ],
+    challenges: [
+      "Java's larger memory footprint",
+      "Learning JavaFX while developing",
+    ],
+    solutions: [
+      "Implemented efficient memory management",
+      "Studied JavaFX documentation thoroughly",
+    ],
+    githubUrl: "https://github.com/amm926616/easypaste-java",
+    lessonsLearned: [
+      "Comparing programming language performance",
+      "JavaFX UI design principles",
+      "When not to rewrite working software",
+    ],
+  },
+  {
+    id: "tasktails",
+    title: "TaskTails",
+    tagline: "Pomodoro-based task management system",
+    description: "Collaborative study timer and task manager",
+    detailedDescription: `
+      Developed with a friend during university.
+      Features:
+      - Pomodoro timer (25/5 minute cycles)
+      - Task management system
+      - Alarm notifications
+      - Basic UI with Tkinter
+    `,
+    image: "",
+    technologies: [
+      { name: "Python", purpose: "Core application" },
+      { name: "Tkinter", purpose: "GUI framework" },
+      { name: "SQLite", purpose: "Data persistence" },
+      { name: "JSON", purpose: "Configuration" },
+    ],
+    challenges: [
+      "Coordinating with a teammate",
+      "Creating reliable timer functionality",
+      "Making Tkinter look decent",
+    ],
+    solutions: [
+      "Used Git for collaboration",
+      "Implemented system-level timing",
+      "Customized Tkinter widgets",
+    ],
+    githubUrl: "https://github.com/amm926616/tasktails",
+    lessonsLearned: [
+      "Collaborative development basics",
+      "Time management in applications",
+      "Limitations of Tkinter",
+    ],
+  },
+  {
+    id: "automation-scripts",
+    title: "Automation Scripts",
+    tagline: "Various productivity scripts",
+    description: "Collection of Python and Bash automation scripts",
+    detailedDescription: `
+      Various scripts created to improve daily productivity:
+      - KPay amount tracking
+      - File/folder renaming utilities
+      - Image resolution fixing
+      - Other workflow automation
+    `,
+    image: "",
+    technologies: [
+      { name: "Python", purpose: "Complex automations" },
+      { name: "Bash", purpose: "System-level scripts" },
+    ],
+    challenges: [
+      "Handling edge cases in file operations",
+      "Making scripts user-friendly",
+    ],
+    solutions: [
+      "Added comprehensive error handling",
+      "Created simple configuration systems",
+    ],
+    githubUrl: "https://github.com/amm926616/automation-scripts",
+    lessonsLearned: [
+      "Power of automation",
+      "Importance of documentation",
+      "Shell scripting techniques",
+    ],
+  },
+  {
+    id: "chess-web",
+    title: "Chess in JavaScript",
+    tagline: "Pure web implementation of chess",
+    description: "Browser-based chess game with no libraries",
+    detailedDescription: `
+      My first web development project, completed in one week.
+      Features:
+      - Complete chess rules implementation
+      - Basic AI opponent
+      - Responsive design
+    `,
+    image: "",
+    technologies: [
+      { name: "HTML", purpose: "Structure" },
+      { name: "CSS", purpose: "Styling" },
+      { name: "JavaScript", purpose: "Game logic" },
+    ],
+    challenges: [
+      "Learning web development from scratch",
+      "Implementing complex chess rules",
+    ],
+    solutions: [
+      "Studied chess algorithms",
+      "Built incrementally from simple to complex",
+    ],
+    githubUrl: "https://github.com/amm926616/chess-web",
+    lessonsLearned: [
+      "Web development fundamentals",
+      "Game state management",
+      "Algorithm implementation",
+    ],
+  },
+  {
+    id: "no-skip-player",
+    title: "No Skip Video Player",
+    tagline: "Forces you to watch videos properly",
+    description: "Video player that prevents skipping content",
+    detailedDescription: `
+      Created to combat my own impatience when watching films.
+      Features:
+      - No skip controls
+      - Saves progress automatically
+      - Minimal distraction interface
+    `,
+    image: "",
+    technologies: [
+      { name: "Python", purpose: "Core application" },
+      { name: "PyQt", purpose: "GUI framework" },
+      { name: "JSON", purpose: "Progress storage" },
+    ],
+    challenges: [
+      "Removing standard player controls",
+      "Reliable progress tracking",
+    ],
+    solutions: [
+      "Customized video player widget",
+      "Frequent autosave functionality",
+    ],
+    githubUrl: "https://github.com/amm926616/no-skip-player",
+    lessonsLearned: [
+      "Video processing basics",
+      "Building constrained UIs",
+      "Behavioral design patterns",
+    ],
+  },
+  {
+    id: "personal-dictionary",
+    title: "Personal Dictionary",
+    tagline: "Korean vocabulary learning system",
+    description: "Custom dictionary for language learning",
+    detailedDescription: `
+      Created to help with Korean vocabulary memorization.
+      Features:
+      - Syllable-based word connections
+      - Custom vocabulary building
+      - Advanced search by components
+    `,
+    image: "",
+    technologies: [
+      { name: "Python", purpose: "Core application" },
+      { name: "PyQt", purpose: "GUI framework" },
+      { name: "SQLite", purpose: "Data storage" },
+      { name: "JSON", purpose: "Configuration" },
+    ],
+    challenges: [
+      "Handling Korean text processing",
+      "Creating meaningful word connections",
+    ],
+    solutions: [
+      "Implemented syllable decomposition",
+      "Developed relational word mapping",
+    ],
+    githubUrl: "https://github.com/amm926616/personal-dictionary",
+    lessonsLearned: [
+      "Text processing in non-Latin scripts",
+      "Creating educational tools",
+      "Database design for language learning",
     ],
   },
   {
